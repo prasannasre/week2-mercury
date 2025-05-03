@@ -1,68 +1,39 @@
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
+package week11;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-public class wEEK8 {
+public class Exp11 {
+	public static void main(String[] args) throws InterruptedException{
 
-public static void main(String[] args) throws
-InterruptedException, AWTException {
-
-System.setProperty(&quot;webdriver.chrome.driver&quot;,&quot;C:\\User
-
-s\\student\\Downloads\\chromedriver-win64
-(3)\\chromedriver-win64\\chromedriver.exe&quot;);
-
-WebDriver driver=new ChromeDriver();
-driver.manage().window().maximize();
-driver.get(&quot;https://www.google.com/&quot;);
-WebElement
-
-Search=driver.findElement(By.name(&quot;q&quot;));
-Search.sendKeys(&quot;CMRIT&quot;);
-Search.sendKeys(Keys.ENTER);
-Thread.sleep(20000);
-WebElement
-
-img=driver.findElement(By.xpath(&quot;//a[normalize-
-space()=&#39;Images&#39;]&quot;));
-img.click();
-WebElement
-
-image=driver.findElement(By.xpath(&quot;//img[@alt=&#39;CMR
-Institute of Technology | Best ...&#39;]&quot;));
-
-Actions action=new Actions(driver);
-
-action.contextClick(image).build().perform();
-
-Robot robot =new Robot();
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_DOWN);
-Thread.sleep(500);
-
-robot.keyPress(KeyEvent.VK_ENTER);
-Thread.sleep(500);
-robot.keyPress(KeyEvent.VK_ENTER);
-System.out.println(&quot;DOWNLOADED&quot;);
-driver.quit();
-
-}
-
-}
+				WebDriver driver=new ChromeDriver();
+		Actions builder = new Actions(driver);
+		driver.get("https://www.google.co.in/");
+		WebElement searchBar = driver.findElement(By.name("q"));
+		searchBar.sendKeys("Myntra");
+		searchBar.submit();	
+		Thread.sleep(30000);
+	    WebElement myntraLink = driver.findElement(By.xpath("(//h3[contains(text(),'Myntra: Online Shopping for Women, Men, Kids Fashion & Lifestyle')])[1]"));
+		myntraLink.click();
+		WebElement profileHyperLink = driver.findElement(By.xpath("(//span[normalize-space()='Profile'])[1]"));
+		profileHyperLink.click();
+		WebElement loginBtn = driver.findElement(By.xpath("(//a[normalize-space()='login / Signup'])[1]"));
+		loginBtn.click();
+		WebElement mobileNo = driver.findElement(By.xpath("(//input[@type='tel'])[1]"));
+		mobileNo.sendKeys("9999999999");
+		WebElement continueBtn = driver.findElement(By.xpath("(//div[@class='submitBottomOption'])[1]"));
+		continueBtn.click();
+		Thread.sleep(500);
+		WebElement otp01 = 
+				driver.findElement(By.xpath("(//input[@name='otp0'])[1]")); 
+				    WebElement otp02 = 
+				driver.findElement(By.xpath("(//input[@name='otp1'])[1]")); 
+				    otp02.sendKeys("2"); 
+				     
+				    WebElement otp03 = 
+				driver.findElement(By.xpath("(//input[@name='otp2'])[1]")); 
+				    otp03.sendKeys("3"); 
+				     
+				    WebElement otp04 = 
+				driver.findElement(By.xpath("(//input[@name='otp3'])[1]"));
+				otp04.sendKeys("4");
+				driver.close();
+		}
+	}
