@@ -1,0 +1,32 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+public class Week5 {
+
+public static void main(String[] args) throws
+InterruptedException {
+
+System.setProperty(&quot;webdriver.chrome.driver&quot;,&quot;C:\\User
+s\\student\\Downloads\\chromedriver-win64
+(1)\\chromedriver-win64\\chromedriver.exe&quot;);
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get(&quot;https://cmrithyderabad.edu.in/&quot;);
+
+Actions actions = new Actions(driver);
+
+WebElement examinationMenu =
+driver.findElement(By.xpath(&quot;/html/body/div[1]/div[1]/s
+ection[3]/div/div/div/div/div/nav[1]/ul/li[5]/a/span/i&quot;));
+actions.moveToElement(examinationMenu).perform();
+WebElement resultsLink =
+driver.findElement(By.xpath(&quot;/html/body/div[1]/div[1]/s
+ection[3]/div/div/div/div/div/nav[1]/ul/li[5]/ul/li[4]/a&quot;));
+resultsLink.click();
+driver.quit();
+}
+
+}
