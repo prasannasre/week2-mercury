@@ -9,9 +9,7 @@ public class Week5 {
 public static void main(String[] args) throws
 InterruptedException {
 
-System.setProperty(&quot;webdriver.chrome.driver&quot;,&quot;C:\\User
-s\\student\\Downloads\\chromedriver-win64
-(1)\\chromedriver-win64\\chromedriver.exe&quot;);
+System.setProperty("webdriver.chrome.driver","F:\\Lab\\chromedriver\\chromedriver.exe");
 WebDriver driver=new ChromeDriver();
 driver.manage().window().maximize();
 driver.get(&quot;https://cmrithyderabad.edu.in/&quot;);
