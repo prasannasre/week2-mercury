@@ -1,0 +1,68 @@
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+public class wEEK8 {
+
+public static void main(String[] args) throws
+InterruptedException, AWTException {
+
+System.setProperty(&quot;webdriver.chrome.driver&quot;,&quot;C:\\User
+
+s\\student\\Downloads\\chromedriver-win64
+(3)\\chromedriver-win64\\chromedriver.exe&quot;);
+
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get(&quot;https://www.google.com/&quot;);
+WebElement
+
+Search=driver.findElement(By.name(&quot;q&quot;));
+Search.sendKeys(&quot;CMRIT&quot;);
+Search.sendKeys(Keys.ENTER);
+Thread.sleep(20000);
+WebElement
+
+img=driver.findElement(By.xpath(&quot;//a[normalize-
+space()=&#39;Images&#39;]&quot;));
+img.click();
+WebElement
+
+image=driver.findElement(By.xpath(&quot;//img[@alt=&#39;CMR
+Institute of Technology | Best ...&#39;]&quot;));
+
+Actions action=new Actions(driver);
+
+action.contextClick(image).build().perform();
+
+Robot robot =new Robot();
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(500);
+
+robot.keyPress(KeyEvent.VK_ENTER);
+Thread.sleep(500);
+robot.keyPress(KeyEvent.VK_ENTER);
+System.out.println(&quot;DOWNLOADED&quot;);
+driver.quit();
+
+}
+
+}
