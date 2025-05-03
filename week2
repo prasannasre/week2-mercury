@@ -1,0 +1,45 @@
+package selenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+public class week2 {
+
+	public static void  main(String[] args)throws InterruptedException{
+		System.setProperty("webDriver.chrome.driver","C:\\Users\\CMRCP\\Downloads\\chromedriver-win64 (4).zip\\chromedriver-win64");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.mercurytravels.co.in/");
+		Thread.sleep(2000);
+		Actions builder = new Actions(driver);
+		WebElement customerLogin=driver.findElement(By.xpath("/html/body/nav[2]/div/div[2]/ul/li[1]/a"));
+		builder.moveToElement(customerLogin).perform();
+		WebElement register=driver.findElement(By.xpath("/html/body/nav[2]/div/div[2]/ul/li[1]/ul/li[2]/a"));
+		register.click();
+		Thread.sleep(1000);
+		WebElement firstname=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/div/div[1]/input"));
+		firstname.sendKeys("Ramya");
+		Thread.sleep(1000);
+		WebElement lastname=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/div/div[2]/input"));
+		lastname.sendKeys("Reddy");
+		Thread.sleep(1000);
+		WebElement email=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/input[1]"));
+		email.sendKeys("22r01a0554@gmail.com");
+		Thread.sleep(1000);
+		WebElement set=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/input[2]"));
+		set.sendKeys("Abcdefghi@1");
+		Thread.sleep(1000);
+		WebElement con=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/input[3]"));
+		con.sendKeys("Abcdefghi@1");
+		Thread.sleep(1000);
+		WebElement mob=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/input[4]"));
+		mob.sendKeys("9845123640");
+		Thread.sleep(1000);
+		WebElement register1=driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/button"));
+        register1.click();
+        Thread.sleep(1000);
+		
+	}
+}
